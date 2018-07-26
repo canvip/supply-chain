@@ -5,7 +5,7 @@ from django.shortcuts import render
 class FrontendRenderView(View):
     def get(self, request, *args, **kwargs):
         return render(request, "index.html",{})
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         return render(request, "index.html",{})
 
 

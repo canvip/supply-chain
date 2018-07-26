@@ -22,16 +22,15 @@ from graphene_django.views import GraphQLView
 from cookbook.schema import schema
 from Viewangular.views import FrontendRenderView
 #from django.conf.urls.static import static
+from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^graphql', GraphQLView.as_view(graphiql=True,schema=schema)),
+    url(r'^g1raphql', GraphQLView.as_view(graphiql=True,schema=schema)),
+    url('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     
 ]
-
+#
 urlpatterns += [
     # your integrate path
     re_path(r'(?P<path>.*)', FrontendRenderView.as_view(), name='home'),
-
-    
-
 ]
