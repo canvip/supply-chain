@@ -24,7 +24,7 @@ from Viewangular.views import FrontendRenderView
 #from django.conf.urls.static import static
 from django.views.decorators.csrf import csrf_exempt
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin', admin.site.urls),
     url(r'^g1raphql', GraphQLView.as_view(graphiql=True,schema=schema)),
     url('graphql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     
