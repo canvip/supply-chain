@@ -1,0 +1,17 @@
+Django==2.0.6
+Rx==1.6.1
+aniso8601==3.0.2
+djangorestframework==3.8.2
+grappip install graphene_djangohene==2.1.2
+e-django==2.0.0
+graphql-core==2.1rc2
+graphql-relay==0.4.5
+iso8601==0.1.12
+promise==2.1
+pytz==2018.4
+singledispatch==3.4.0.3
+six==1.11.0
+typing==3.6.4
+http://docs.graphene-python.org/projects/django/en/latest/tutorial-plain/
+
+https://www.youtube.com/watch?v=DUiIw7LJj1g&index=5&list=PLANjs1H0YEnSfmRMLU7TVCbvdKKkJz9tj
