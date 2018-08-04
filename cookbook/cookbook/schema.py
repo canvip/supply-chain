@@ -2,7 +2,9 @@ import graphene
 
 import ingredients.schema, shortener.schema,links.schema
 
-class Query(ingredients.schema.Query,links.schema.Query,
+class Query(
+            ingredients.schema.Query,
+            links.schema.Query,
             shortener.schema.Query,
             graphene.ObjectType):
     # This class will inherit from multiple Queries

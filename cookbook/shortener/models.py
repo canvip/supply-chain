@@ -8,7 +8,8 @@ class Shortener(models.Model):
     """Model definition for shortener."""
 
     # TODO: Define fields here
-    url         = models.CharField(max_length=220,)
+    #url         = models.CharField(max_length=220,)
+    url         = models.URLField()
     shortcode   = models.CharField(max_length = 15 ,unique= True,blank = True)
     updated     = models.DateTimeField(auto_now=True) 
     timestamp   = models.DateTimeField(auto_now_add=True) 
