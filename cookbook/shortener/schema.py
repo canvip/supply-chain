@@ -22,31 +22,31 @@ class Query(object):
         return Shortener.objects.all()
 
 
-class CreateLink(graphene.Mutation):
-    id = graphene.Int()
-    url = graphene.String()
-    #shortcode   =  graphene.String()
-    #updated     =  graphene.String()
-    #timestamp   =  graphene.String()
+class CreateShortener(graphene.Mutation):
+    id          =  graphene.Int()
+    url         =  graphene.String()
+    shortcode   =  graphene.String()
+    updated     =  graphene.String()
+    timestamp   =  graphene.String()
 
     #2
     class Arguments:
-        url = graphene.String()
-        id = graphene.Int()
+        url          = graphene.String()
+        shortcode    = graphene.Int()
         #description = graphene.String()
 
     #3
-    def mutate(self, info, url, id):
-        link = Link(url=url, id=id)
+    def mutate(self, info, url, shortcode):
+        link = Link(url=url, shortcode=shortcode)
         link.save()
 
-        return CreateLink(
-            id=link.id,
+        return CreateShortener(
             url=link.url,
-            #description=link.description,
+            shortcode=link.shortcode,
+            
         )
 
 
 #4
 class Mutation(graphene.ObjectType):
-    create_link = CreateLink.Field()
+    create_Shortener = CreateShortener.Field()
